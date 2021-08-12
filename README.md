@@ -73,12 +73,11 @@ Next is setting up the global quizzes. I plan to change this in the [future](#Fu
 &NewLine;
 &NewLine;
 
-| | | | |
-| ------ | ------ | ------ | ------ |
+| | | |
+| ------ | ------ | ------ |
 | [bcryptjs](https://www.npmjs.com/package/bcryptjs) |  [dotenv](https://www.npmjs.com/package/dotenv) | [express](https://www.npmjs.com/package/express) |
 | [express-handlebars](https://www.npmjs.com/package/express-handlebars) | [express-session](https://www.npmjs.com/package/express-session)  | [mysql2](https://www.npmjs.com/package/mysql2) |
 | [passport](https://www.npmjs.com/package/passport) | [passport-local](https://www.npmjs.com/package/passport-local)  | [sequelize](https://www.npmjs.com/package/sequelize) |
-|
 
 &NewLine;
 &NewLine;
@@ -88,8 +87,8 @@ Next is setting up the global quizzes. I plan to change this in the [future](#Fu
 &NewLine;
 &NewLine;
 
-| | | | |
-| ------ | ------ | ------ | ------ |
+| | | |
+| ------ | ------ | ------ |
 | [eslint](https://www.npmjs.com/package/eslint) | [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) | [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier)|
 | [nodemon](https://www.npmjs.com/package/nodemon) | [prettier](https://www.npmjs.com/package/prettier) |
 
