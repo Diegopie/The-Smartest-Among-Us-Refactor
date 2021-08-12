@@ -50,7 +50,7 @@ If you'd like to play with this code you may fork this repo and run on your mach
 - Create a mySQL database named quizapp
 - run server.js in a node environment to create all the necessary SQL tables
 
-Next is setting up the global quizzes. I plan to change this in the [future](#Future-Development), but to use the globally accessible quizzes we first need to create a user in the db, known as global, then create the quizzes using this first user as the creator. It's not very efficient but it allows us to write global leaderboards to the server and do server-side updates to the quizzes. I do all this in [Postman](https://www.postman.com/downloads/)
+Next is setting up the global quizzes. I plan to change this in the [future](#Future-Development), but to use the globally accessible quizzes we first need to create a user in the db, known as global, then create the quizzes using this first user as the creator. It's not very efficient but it allows us to write global leaderboards to the server and do server-side updates to the quizzes. I do all this in [Postman](https://www.postman.com/downloads/). Make sure you change the password! 😅
 
 - To create the initial, global user, make a POST request to localhost:8080/api/user with raw JSON. The needed JSON can be found in db/seeds/user.json
 
@@ -112,19 +112,23 @@ We use a SQL database to service our application, with mySQL and mySQL Workbench
 
 #### Routes
 
-This app relies on dozens of API routes to manage each feature. They too are exported from an index.js file for simplicity. Obviously, each file using API routes for that specific feature. auth is shorthand for authenticated user and manages login, signup, search, etc.
+Currently, all HTTP and API routes are in controller/routes.js. It's a fairly straightforward file that also handles the site's CRUD operators.
 
 #### Authentication
 
 Express-session, Passport, Passport-Local Strategy, bcryptjs
 
+These packages are used to hash and secure user passwords. We also have simple redirects for when unauthenticated users hit a page they are not allowed to see.
+
 ### Client
 
-We use react.js to build our front-end interface. We have custom linting rules beyond what react defaults with and a basic service worker to manage the PWA usage.
+This app is rendered using Handlebars.js. It's not a very complex implementation but is of great help to render a user's saved quizzes from the database.
 
 ## Future Development
 
-We have a lot planned for the future of this application. This MVP was built as a school project but we aim to continue working on this to enjoy with our friends! We use Jira to organize our development time and have our next sprint planned out. Here are some highlights
+I have a few things in mind for this app, mostly just to optimize the current code then to add features.
+
+- Organize the routes into their own files
 
 ## Contributors
 
