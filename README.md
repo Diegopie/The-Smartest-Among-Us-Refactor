@@ -8,7 +8,10 @@
 
 ## Description
 
-Talk about using the site and whatnot
+This my personal refactor of a project I worked on with two of my [colleagues](#Contributors). I'm happy with the work we did but I know there are opportunities for efficiency and I would like to eventually add more features to the site!
+
+This application acts as a fun quiz site. Users can access global quizzes to familiarize themselves with the site and compete in a global leaderboard. They may also play randomly generated quizzes with many categories and options to choose from! Users can even save random quizzes they enjoy to their account, where they can try and beat their scores and share the quiz with their friends. Users can even create their own quiz, either by editing a random quiz they liked or creating one from scratch!
+ 
 
 &NewLine;
 &NewLine;
@@ -120,6 +123,8 @@ Express-session, Passport, Passport-Local Strategy, bcryptjs
 
 These packages are used to hash and secure user passwords. We also have simple redirects for when unauthenticated users hit a page they are not allowed to see.
 
+> [Back To Server](#Server) || [Back To Development](#Development)
+
 ### Client
 
 This app is rendered using Handlebars.js. It's not a very complex implementation but is of great help to render a user's saved quizzes from the database.
@@ -129,20 +134,23 @@ This app is rendered using Handlebars.js. It's not a very complex implementation
 I have a few things in mind for this app, mostly just to optimize the current code then to add features.
 
 - Organize the routes into their own files
+- Rework creating and storing global quizzes
+- Refactor the jQuery powering quiz rendering
+- Give users custom styling options for their quizzes
 
 ## Contributors
 
-We are a small team who just recently began coding as part of the University of Utah's Coding Bootcamp. Our goal for this project to be ambitious, to take just 7 short week of development time and create an application that is unique. Something that forced us to learn well beyond our skills at the time. We are passionate about coding and are eager to continue to develop our skills.
+The original repo can be found [here](https://github.com/Diegopie/The-Smartest-Among-Us)! We created this app as a school project with the University of Utah and I am forever grateful I was able to work with these two 😊!
 
-![Diego H.](./assets/dh.jpg) Diego Hernandez || [GitHub](https://github.com/Diegopie) || [LinkedIn](https://www.linkedin.com/in/diego-hernandez-7327381b2/)
+Diego Hernandez || [GitHub](https://github.com/Diegopie) || [LinkedIn](https://www.linkedin.com/in/diego-hernandez-7327381b2/)
 
-![Diego H.](./assets/ds.jpg) Diana Schull || [GitHub](https://github.com/dianalynshull)
+Seth Martineau || [GitHub](https://github.com/slothings)
 
-![Diego H.](./assets/bz.jpg) Bing Z. || [GitHub](https://github.com/imbingz)
+Kay || [GitHub](https://github.com/theykay)
 
 ## Contact
 
-If you have any feedback our questions, please reach us at diegopie@outlook.com!
+If you have any feedback our questions, please reach me at diegopie@outlook.com!
 
 ## License
 
