@@ -37,16 +37,30 @@ Talk about using the site and whatnot
 &NewLine;
 
 ```sh
-Frontend – React, socket.io-client, Bootstrap, React-icons, React-Toastify, use-sound, uuid 
-Backend – Node, express, socket.io
-Database – Mongodb, Mongoose
+Frontend – Handlebars, Bootstrap,  
+Backend – Node, Express
+Database – mySQL, Sequelize
 Authentication – Express-session, passport-local, bcrypt
-Testing – react-testing-library, jest, supertest
 ```
 
 ### Installation
 
-Blaw blaw and how to set up the first user and quiz (seeds folder)
+If you'd like to play with this code you may fork this repo and run on your machines. You will need [node.js](https://nodejs.org/en/) and [mySQL](https://dev.mysql.com/downloads/mysql/) installed. Outside of cloning the project and installing the dependencies, there are a few things to take care of to get the app running.
+
+- Create a mySQL database named quizapp
+- run server.js in a node environment to create all the necessary SQL tables
+
+Next is setting up the global quizzes. I plan to change this in the [future](#Future-Development), but to use the globally accessible quizzes we first need to create a user in the db, known as global, then create the quizzes using this first user as the creator. It's not very efficient but it allows us to write global leaderboards to the server and do server-side updates to the quizzes. I do all this in [Postman](https://www.postman.com/downloads/)
+
+- To create the initial, global user, make a POST request to localhost:8080/api/user with raw JSON. The needed JSON can be found in db/seeds/user.json
+
+`{
+  "username":"global",
+  "password": "impstr"
+}`
+
+- Now the quizzes can be created and assigned to this first user. Make a POST request to localhost:8080/api/quiz with raw JSON. Our JSON quiz files can be found in db/seeds/HKquiz.json and AUquiz.json, but you can create your own as well using this same setup. A template of how quizzes are stored in the database can be found in that same folder under quiz.json
+
 
 &NewLine;
 &NewLine;
@@ -58,11 +72,10 @@ Blaw blaw and how to set up the first user and quiz (seeds folder)
 
 | | | | |
 | ------ | ------ | ------ | ------ |
-| [bcryptjs](https://www.npmjs.com/package/bcryptjs) | [bootstrap](https://www.npmjs.com/package/bootstrap) | [concurrently](https://www.npmjs.com/package/concurrently) | [dotenv](https://www.npmjs.com/package/dotenv) |
-| [express](https://www.npmjs.com/package/express) | [express-session](https://www.npmjs.com/package/express-session) | [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) | [mongoose](https://www.npmjs.com/package/mongoose) |
-| [passport](https://www.npmjs.com/package/passport) | [passport-local](https://www.npmjs.com/package/passport-local) | [react-bootstrap](https://www.npmjs.com/package/react-bootstrap) | [react-icons](https://www.npmjs.com/package/react-icons) |
-| [react-loader-spinner](https://www.npmjs.com/package/react-loader-spinner) | [socket.io](https://www.npmjs.com/package/socket.io) | [socket.io-client](https://www.npmjs.com/package/socket.io-client) |
-| [Use-sound](https://www.npmjs.com/package/use-sound) | [uuid](https://www.npmjs.com/package/uuid) | [yarn](https://www.npmjs.com/package/yarn) |
+| [bcryptjs](https://www.npmjs.com/package/bcryptjs) |  [dotenv](https://www.npmjs.com/package/dotenv) | [express](https://www.npmjs.com/package/express) |
+| [express-handlebars](https://www.npmjs.com/package/express-handlebars) | [express-session](https://www.npmjs.com/package/express-session)  | [mysql2](https://www.npmjs.com/package/mysql2) |
+| [passport](https://www.npmjs.com/package/passport) | [passport-local](https://www.npmjs.com/package/passport-local)  | [sequelize](https://www.npmjs.com/package/sequelize) |
+|
 
 &NewLine;
 &NewLine;
@@ -74,8 +87,8 @@ Blaw blaw and how to set up the first user and quiz (seeds folder)
 
 | | | | |
 | ------ | ------ | ------ | ------ |
-| [eslint](https://www.npmjs.com/package/eslint) | [jest](https://www.npmjs.com/package/jest) | [Jest Testing Library](https://jestjs.io/docs/en/getting-started) |[nodemon](https://www.npmjs.com/package/nodemon) |
-| [React-Testing-Library](https://testing-library.com/docs/react-testing-library/intro/) | [supertest](https://www.npmjs.com/package/supertest) |
+| [eslint](https://www.npmjs.com/package/eslint) | [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) | [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier)|
+| [nodemon](https://www.npmjs.com/package/nodemon) | [prettier](https://www.npmjs.com/package/prettier) |
 
 &NewLine;
 &NewLine;
@@ -93,9 +106,9 @@ Blaw blaw and how to set up the first user and quiz (seeds folder)
 &NewLine;
 &NewLine;
 
-We use a Mongo database to service our application, with Robo3T being our interface of choice.
+We use a SQL database to service our application, with mySQL and mySQL Workbench being our interface of choice.
 
-![Database Map](./assets/DB_Map-01.png)
+![Database Map](./public/assets/img/dbmap.png)
 
 #### Routes
 
